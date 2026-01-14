@@ -2,11 +2,9 @@ package Views;
 
 import Models.Joueur;
 
-import java.time.LocalDate;
+public class NouveauJoueur {
 
-public class CreateJoueur {
-
-    public Joueur createSaisieJoueur(Joueur j) {
+    public Joueur saisieNouveauJoueur(Joueur j) {
         System.out.println("*************************************************");
         System.out.println("Nom du joueur :");
         String nomJoueur = Util.SCANNER.next();
