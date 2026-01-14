@@ -13,7 +13,7 @@ public class FigurineDAOImpl implements FigurineDAO{
 
 
     @Override
-    public Figurine findById(int idFigurine, ConnectionBDD c) throws SQLException {
+    public Figurine findById(int idFigurine, Connection c) throws SQLException {
         PreparedStatement pst = c.prepareStatement("select * from Figurine where idFigurine = ?");
         Figurine fig = null;
         pst.setInt(1, idFigurine);
@@ -26,12 +26,6 @@ public class FigurineDAOImpl implements FigurineDAO{
             System.out.println(e.getMessage());
         }
         return fig;
-    }
-    }
-
-    @Override
-    public ArrayList<Figurine> findAll() throws SQLException {
-        return null;
     }
 
     @Override
@@ -49,3 +43,7 @@ public class FigurineDAOImpl implements FigurineDAO{
         return false;
     }
 }
+
+
+
+

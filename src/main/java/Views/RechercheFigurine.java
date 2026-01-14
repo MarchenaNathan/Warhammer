@@ -1,0 +1,27 @@
+package Views;
+
+import Models.Figurine;
+
+import java.util.Scanner;
+
+class Util {
+    public static final Scanner SCANNER = new Scanner(System.in);
+}
+public class RechercheFigurine {
+
+        public int afficherRecherche(){
+            int idFigurine=0;
+            System.out.println("*************************************************");
+            System.out.println("Quel est l'identifiant de la figurine à chercher :");
+            idFigurine=Util.SCANNER.nextInt();
+            return idFigurine;
+        }
+        public void afficherResultatFig(Figurine f){
+            if (f != null) {
+                System.out.println(f);
+            } else {
+                System.out.println("Figurine non présente en BDD");
+            }
+        }
+    }
+
