@@ -1,11 +1,14 @@
 package models;
 
+import java.util.List;
+
 public class Joueur {
     private int idJoueur;
     private String nomJoueur;
     private String prenomJoueur;
     private String pseudoJoueur;
     private boolean victoire;
+    private List<Armee>;
 
     public Joueur(String nomJoueur, String prenomJoueur, String pseudoJoueur) {
         this.nomJoueur = nomJoueur;
