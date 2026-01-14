@@ -1,6 +1,6 @@
 package DAO;
 
-import models.Joueur;
+import Models.Joueur;
 
 import java.sql.Connection;
 import java.sql.SQLException;

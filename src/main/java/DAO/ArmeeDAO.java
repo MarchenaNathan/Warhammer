@@ -1,7 +1,7 @@
 package DAO;
 
-import models.Armee;
-import models.Joueur;
+import Models.Armee;
+import Models.Joueur;
 
 import java.sql.Connection;
 import java.sql.SQLException;
