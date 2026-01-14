@@ -2,20 +2,23 @@ package models;
 
 import java.util.List;
 
-public class Armee {
+public class Armee extends Faction {
     private int idArmee;
     private String nomArmee;
     private int totalPtsUnites;
     private int ptsVictoire;
     private List<Unites> ListUnite;
 
-    public Armee(int idArmee, String nomArmee, int totalPtsUnites, int ptsVictoire, List<Unites> listUnite) {
+    public Armee(int idFaction, String nomFaction, int idArmee, String nomArmee, int totalPtsUnites, int ptsVictoire, List<Unites> listUnite) {
+        super(idFaction, nomFaction);
         this.idArmee = idArmee;
         this.nomArmee = nomArmee;
         this.totalPtsUnites = totalPtsUnites;
         this.ptsVictoire = ptsVictoire;
         ListUnite = listUnite;
     }
+
+
 
     public int getIdArmee() {
         return idArmee;
@@ -67,4 +70,6 @@ public class Armee {
                 ", ListUnite=" + ListUnite +
                 '}';
     }
+
+
 }
