@@ -8,12 +8,21 @@ public class Joueur {
     private String prenomJoueur;
     private String pseudoJoueur;
     private boolean victoire;
-    private List<Armee>;
+    private List<Armee> listArmee;
 
     public Joueur(String nomJoueur, String prenomJoueur, String pseudoJoueur) {
         this.nomJoueur = nomJoueur;
         this.prenomJoueur = prenomJoueur;
         this.pseudoJoueur = pseudoJoueur;
+    }
+
+    public Joueur(int idJoueur, String nomJoueur, String prenomJoueur, String pseudoJoueur, boolean victoire, List<Armee> listArmee) {
+        this.idJoueur = idJoueur;
+        this.nomJoueur = nomJoueur;
+        this.prenomJoueur = prenomJoueur;
+        this.pseudoJoueur = pseudoJoueur;
+        this.victoire = victoire;
+        this.listArmee = listArmee;
     }
 
     public int getIdJoueur() {
@@ -56,6 +65,14 @@ public class Joueur {
         this.victoire = victoire;
     }
 
+    public List<Armee> getListArmee() {
+        return listArmee;
+    }
+
+    public void setListArmee(List<Armee> listArmee) {
+        this.listArmee = listArmee;
+    }
+
     @Override
     public String toString() {
         return "Joueur{" +
@@ -64,6 +81,7 @@ public class Joueur {
                 ", prenomJoueur='" + prenomJoueur + '\'' +
                 ", pseudoJoueur='" + pseudoJoueur + '\'' +
                 ", victoire=" + victoire +
+                ", listArmee=" + listArmee +
                 '}';
     }
 }
