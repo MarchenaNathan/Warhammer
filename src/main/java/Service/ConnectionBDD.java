@@ -43,7 +43,7 @@ public class ConnectionBDD {
         return f;
     }
 
-    public Joueur createJoueur(String nomJoueur, String prenomJoueur, String pseudoJoueur) {
+    public Joueur createJou(String nomJoueur, String prenomJoueur, String pseudoJoueur) {
         Joueur jou = null;
         try {
             if (conn != null) {
@@ -55,5 +55,45 @@ public class ConnectionBDD {
         return jou;
     }
 
+    public String updateJou(int idJoueur,Joueur j){
+        try {
+            if (conn != null) {
+                boolean updateOk= joueurDAO.update(idJoueur, j, conn);
+                if(updateOk){
+                    return "Le joueur "+ j.getPseudoJoueur() +" a été mis à jour!";
+                }
+                else {
+                    return "La mise à jour de " + j.getPseudoJoueur() + "n'a pas fonctionné!";
+                }
+            }
+        } catch (SQLException e) {
+            System.err.format("Erreur SQL:%s \n%s", e.getSQLState(), e.getMessage());
+        }
+        return "Erreur lors de la mise à jour du joueur";
+    }
+
+    public boolean deleteJou(int idJoueur){
+        try {
+            if (conn != null) {
+                joueurDAO.delete(idJoueur, conn);
+                return true;
+            }
+        } catch (SQLException e) {
+            System.err.format("Erreur SQL:%s \n%s", e.getSQLState(), e.getMessage());
+        }
+        return false;
+    }
+
+    public Joueur findJoueurByPseudo(String pseudoJoueur) {
+        Joueur j = null;
+        try {
+            if (conn != null) {
+                j = joueurDAO.findByPseudo(pseudoJoueur, conn);
+            }
+        } catch (SQLException e) {
+            System.err.format("Erreur SQL:%s \n%s", e.getMessage(), e.getSQLState());
+        }
+        return j;
+    }
 
 }

@@ -16,13 +16,12 @@ public class Joueur {
         this.pseudoJoueur = pseudoJoueur;
     }
 
-    public Joueur(int idJoueur, String nomJoueur, String prenomJoueur, String pseudoJoueur, boolean victoire, List<Armee> listArmee) {
+    public Joueur(int idJoueur, String nomJoueur, String prenomJoueur, String pseudoJoueur, boolean victoire) {
         this.idJoueur = idJoueur;
         this.nomJoueur = nomJoueur;
         this.prenomJoueur = prenomJoueur;
         this.pseudoJoueur = pseudoJoueur;
         this.victoire = victoire;
-        this.listArmee = listArmee;
     }
 
     public int getIdJoueur() {

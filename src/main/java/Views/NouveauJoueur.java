@@ -14,7 +14,6 @@ public class NouveauJoueur {
         System.out.println("Pseudo du joueur :");
         String pseudoJoueur = Util.SCANNER.next();
 
-        Joueur jou = new Joueur(nomJoueur, prenomJoueur, pseudoJoueur);
-        return jou;
+        return new Joueur(nomJoueur, prenomJoueur, pseudoJoueur);
     }
 }

@@ -3,6 +3,8 @@ package Controler;
 import Models.Joueur;
 import Service.ConnectionBDD;
 import Views.NouveauJoueur;
+import Views.RechercheJoueur;
+import Views.UpdateJoueur;
 
 public class ControlerJoueur {
 
@@ -15,9 +17,37 @@ public class ControlerJoueur {
         //appel du service ConnectionBDD
         ConnectionBDD cbdd = new ConnectionBDD();
 
-        Joueur j = cbdd.createJoueur(jou.getNomJoueur(), jou.getPrenomJoueur(), jou.getPseudoJoueur());
+        Joueur j = cbdd.createJou(jou.getNomJoueur(), jou.getPrenomJoueur(), jou.getPseudoJoueur());
 
         System.out.println("Joueur crée : " + j);
     }
 
+    public void majJoueur() {
+        RechercheJoueur GUIrechercheJr = new RechercheJoueur();
+        UpdateJoueur GUIupdateJr = new UpdateJoueur();
+        String pseudo = GUIrechercheJr.afficherRecherche();
+
+        ConnectionBDD cbdd = new ConnectionBDD();
+        Joueur j = cbdd.findJoueurByPseudo(pseudo);
+        int id = j.getIdJoueur();
+
+        GUIrechercheJr.afficherResultatJoueur(j);
+
+        Joueur j2 = GUIupdateJr.saisieUpdateJoueur(j);
+
+        System.out.println(cbdd.updateJou(id, j2));
+    }
+
+    public void supprimeJoueur() {
+        RechercheJoueur GUIrechercheJr = new RechercheJoueur();
+        String pseudo = GUIrechercheJr.afficherRecherche();
+
+        ConnectionBDD cbdd = new ConnectionBDD();
+        Joueur j = cbdd.findJoueurByPseudo(pseudo);
+        int id = j.getIdJoueur();
+
+        GUIrechercheJr.afficherResultatJoueur(j);
+
+        System.out.println(cbdd.deleteJou(id));
+    }
 }
