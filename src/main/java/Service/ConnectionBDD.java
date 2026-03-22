@@ -2,6 +2,7 @@ package Service;
 
 import DAO.*;
 import Models.Figurine;
+import Models.Joueur;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -41,5 +42,18 @@ public class ConnectionBDD {
         }
         return f;
     }
+
+    public Joueur createJoueur(String nomJoueur, String prenomJoueur, String pseudoJoueur) {
+        Joueur jou = null;
+        try {
+            if (conn != null) {
+                jou = joueurDAO.create(nomJoueur, prenomJoueur, pseudoJoueur, conn);
+            }
+        } catch (SQLException e) {
+            System.err.format("Erreur SQL:%s \n%s", e.getMessage(), e.getSQLState());
+        }
+        return jou;
+    }
+
 
 }

@@ -3,14 +3,16 @@ package Models;
 public class Figurine {
     private  int idFigurine;
     private String nom;
+    private int ptsFigurine;
     private int pv;
     private double mvt;
     private int ct;
     private int cc;
 
-    public Figurine(int idFigurine, String nom, int pv, double mvt, int ct, int cc) {
+    public Figurine(int idFigurine, String nom, int ptsFigurine, int pv, double mvt, int ct, int cc) {
         this.idFigurine = idFigurine;
         this.nom = nom;
+        this.ptsFigurine = ptsFigurine;
         this.pv = pv;
         this.mvt = mvt;
         this.ct = ct;
@@ -31,6 +33,14 @@ public class Figurine {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public int getPtsFigurine() {
+        return ptsFigurine;
+    }
+
+    public void setPtsFigurine(int ptsFigurine) {
+        this.ptsFigurine = ptsFigurine;
     }
 
     public int getPv() {
@@ -70,6 +80,7 @@ public class Figurine {
         return "Figurine{" +
                 "idFigurine=" + idFigurine +
                 ", nom='" + nom + '\'' +
+                ", ptsFigurine=" + ptsFigurine +
                 ", pv=" + pv +
                 ", mvt=" + mvt +
                 ", ct=" + ct +

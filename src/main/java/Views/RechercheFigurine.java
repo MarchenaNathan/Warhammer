@@ -2,6 +2,8 @@ package Views;
 
 import Models.Figurine;
 
+import java.util.Scanner;
+
 public class RechercheFigurine {
 
     public int afficherRecherche(){
@@ -11,7 +13,7 @@ public class RechercheFigurine {
         idFigurine=Util.SCANNER.nextInt();
         return idFigurine;
     }
-    public void afficherResultatPers(Figurine f){
+    public void afficherResultatFig(Figurine f){
         if (f != null) {
             System.out.println(f);
         } else {
